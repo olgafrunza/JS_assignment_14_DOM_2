@@ -38,14 +38,27 @@ window.addEventListener("keydown", (event) => {
 
 //3. Write a div that has a like button. When you click for the first time it will like , if you click again it will take the like back
 
-const likeBtn = document.getElementById("like");
+// const likeBtn = document.getElementById("like");
 
+// likeBtn.addEventListener("click", () => {
+//   likeBtn.classList.toggle("liked");
+//   if (likeBtn.classList.contains("liked")) {
+//     likeBtn.classList.remove("liked");
+//   } else {
+//     likeBtn.classList.add("liked");
+//   }
+// });
+
+///////////////////////////////////////////////////////////////////////////
+const likeBtn = document.getElementById("like");
+let count = 0;
 likeBtn.addEventListener("click", () => {
-  likeBtn.classList.toggle("liked");
-  if (likeBtn.classList.contains("liked")) {
-    likeBtn.classList.remove("liked");
-  } else {
+  count++;
+  if (count === 1) {
     likeBtn.classList.add("liked");
+  } else {
+    likeBtn.classList.remove("liked");
+    count = 0;
   }
 });
 
